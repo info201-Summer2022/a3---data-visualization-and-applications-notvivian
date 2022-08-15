@@ -1,1 +1,49 @@
+---
+title: "Incarceration trends analysis"
+output: html_document 
+---
+```{r setup, include=FALSE}
+source("analysis.R")
+```
+## Introduction
 
+Incarceration trends had always get people's attention. In this assignment, I analysis the incarceration trends from 1970 to 2018 in United States. The data is complex and difficult to analysis, so I focus mainly on AL. I analyzed three topics include **Total jail population changed by year.**, **Incarceration rate by race**, and **Incarceration rate by County**. When there is too much data, I use data from AL and year 2018 as example to study. I cited [Incarceration trends](https://github.com/vera-institute/incarceration-trends#documentation) which is a good source to learn the incarceration trends.
+
+## Summary information 
+
+The dataset includes a large size of data. To get a more specific conclusion, I focus on Autauga County in AL. The summary include the years when Autauga County has maximum and the minimum of total population. The mean of female and male population form 15 to 64. Which county in AL has the most incarcerated population, and the difference between total_jail_pop in 1998 and 2018 of Autauga County in AL. By analysis these data, I can get information such as both the total population and incarcerated population are increasing by year, the difference between female population and male population in number, etc.
+
+```{r, echo=FALSE}
+summary_info <- list()
+summary_info$max_pop_year <- max_pop_year
+summary_info$min_pop_year <- min_pop_year
+summary_info$mean_female_15to64 <- mean_female_15to64
+summary_info$mean_male_15to64 <- mean_male_15to64 
+summary_info$max_jail_pop_county <- max_jail_pop_county
+summary_info$difference <- difference
+```
+
+## Chart
+### Line Chart
+
+The line chart represents **the incarceration trends of top 5 counties in AL from 1970 to 2018.** Considering one county might not representative, so I use five counties as examples. From the chart, we can see the total number of people incarcerated have a overall increase trend by year. Additionally, total_jail_pop of all five counties decrease in around 1985.
+
+```{r, echo=FALSE}
+plot1
+```
+
+### Bar Chart
+
+The bar chart shows **the incarceration rate by race in 1978 and 2008.** We can not only see the change by 30 years but also comparing total population with incarcerated population in Autauga in AL. As we can see the total population is much more than incarcerated population. In this way, we can get an information (based on the chart) that Autauga in AL might is safe to travel.
+
+```{r, echo=FALSE}
+plot2
+```
+
+### Map
+
+The map shows **the incarceration rate in 2018 by county.** The higher the incarceration rate, the darker the color shows on the map.
+
+```{r, echo=FALSE}
+map
+```
